@@ -116,7 +116,7 @@
   (compojure/POST "/q/:owner-name/" req (pass-the-query req))
   (route/not-found "<h1>404 - Page not found</h1>"))
 
-(defonce ^:private raygun-client (com.mindscapehq.raygun4java.core.RaygunClient. "7EHKSOB+ylyJ0o0PQK9vuA=="))
+(defonce ^:private raygun-client (com.mindscapehq.raygun4java.core.RaygunClient. (:raygun-api-key (settings/get-settings))))
 
 (defn make-handler [web-app]
   ;; (println (format "web-app = %s" (with-out-str (pprint/pprint web-app))))
