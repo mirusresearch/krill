@@ -53,11 +53,7 @@
   (assoc abstract-event-store-impl
          :add-event-impl! (fn [this owner-name event]
                             (swap! (:event-map this) assoc-in [owner-name (:id event)] event)
-                            event
-                             ;; (let [all-new-evts (into {} (map (fn [x] [(:id x) x]) events))
-                             ;;       merged-with-owner (merge (-> this :event-map (get owner-name)) all-new-evts)]
-                             ;;   (swap! (:event-map this) merge {owner-name merged-with-owner}))
-                             )))
+                            event)))
 
 (defrecord EventStore [owner-store])
 
