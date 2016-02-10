@@ -1,0 +1,21 @@
+syntax: glob
+
+.conf/.vagrant/**
+krill-clj.log
+.DS_Store
+docs/site/*
+local-settings.edn
+.idea/*
+krill.iml
+
+target/**
+classes/**
+checkouts/**
+pom.xml
+pom.xml.asc
+# *.jar
+*.class
+.lein-*
+.nrepl-port
+.gitignore
+.git/**
